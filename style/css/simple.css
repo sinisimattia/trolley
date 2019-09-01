@@ -1,0 +1,219 @@
+/*
+ * Mattia Sinisi
+ */
+
+/* Importazioni, Variabili */
+:root{
+	--color-a: #093;
+	--color-b: #06F;
+	--bg-color: #EEE;
+}
+
+@font-face{
+	font-family: 'Rubik';
+	src: url(../fonts/Rubik-Regular.ttf);
+}
+
+@font-face{
+	font-family: 'Rubik Bold';
+	src: url(../fonts/Rubik-Bold.ttf);
+}
+
+@font-face{
+	font-family: 'Rubik Light';
+	src: url(../fonts/Rubik-Light.ttf);
+}
+
+@font-face{
+	font-family: 'Squada One';
+	src: url(../fonts/SquadaOne-Regular.ttf);
+}
+
+/* Resetting */
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+table, tbody, tr, td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* General Styling */
+
+body{
+	background-color: var(--bg-color);
+}
+
+hr{
+	border: 0.5px dotted gray;
+}
+
+a, p, .button{
+	font-family: 'Rubik';
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+input, textarea, button{
+	max-width: 500px;
+	font-family: 'Rubik';
+	resize: vertical;
+}
+
+/* Classes */
+
+.min-group{
+	background-color: #FFF;
+	border: 0.5px solid #000;
+}
+
+.group{
+	background-color: #FFF;
+	box-shadow: 0 2px 15px #AAA;
+}
+
+.round{
+	border-radius: 20px;
+}
+
+.list{
+	min-width: 200px;
+	width: auto;
+	padding: 10px;
+	background-color: var(--bg-color);
+	margin: auto;
+	margin-top: 0;
+}
+
+.item{
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.min-txt {
+	font-size: 12px;
+	color: #777;
+}
+
+[draggable = true], .draggable{
+	cursor: grab;
+}
+
+.button{
+	border: none;
+	font-size: 16px;
+	margin: 5px;
+	padding: 3px;
+}
+
+/* Griglie */
+
+#main{
+	margin: auto;
+	padding: 10px;
+	max-width: 1300px;
+
+	display: grid;
+
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+
+	grid-template-areas:
+	"to-do doing done";
+}
+
+#new-memo-wrapper{
+	grid-area: new-memo;
+
+	text-align: center;
+}
+
+#to-do-wrapper{
+	grid-area: to-do;
+}
+
+#doing-wrapper{
+	grid-area: doing;
+}
+
+#done-wrapper{
+	grid-area: done;
+}
+
+/* Specific Styling */
+
+#header{
+	text-align: center;
+	border: none;
+	box-shadow: 0 2px 15px #AAA;
+	margin-bottom: 10px;
+}
+
+#header .title{
+	font-family: 'Rubik Bold';
+	font-size: 70px;
+	color: var(--color-b);
+	text-shadow: 0 4px #222;
+}
+
+.item .title{
+	font-size: 25px;
+	font-family: 'Rubik Bold';
+}
+
+.item .info{
+	font-size: 15px;
+	font-family: 'Rubik Light';
+}
+
+div#actions{
+	text-align: center;
+}
+
+button.act_start{
+	background-color: orange;
+	color: white;
+}
+
+button.act_complete{
+	background-color: green;
+	color: white;
+}
+
+button.act_remove{
+	background-color: red;
+	color: white;
+}
+
+#new-memo-wrapper{
+	max-width: 1000px;
+	min-width: 500px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+#new-memo-wrapper #new-memo{
+	margin: auto;
+}
+
+#new-memo-wrapper *{
+	width: 90%;
+}
+
+@media screen and ( max-width: 900px ){
+	#main{
+		display: block;
+	}
+}
